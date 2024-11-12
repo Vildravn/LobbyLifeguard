@@ -1,0 +1,13 @@
+{
+    "Id": "LobbyLifeguard",
+    "PackPath": "LobbyLifeguard.pck",
+    "Dependencies": [
+      "TackleBox"
+    ],
+    "Metadata": {
+      "Name": "LobbyLifeguard",
+      "Author": "Vildravn",
+      "Version": "1.0.0",
+      "Description": "A lifeguard for your lobby that bans icky people on sight."
+    }
+  }

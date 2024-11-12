@@ -1,0 +1,10 @@
+{
+    "name": "LobbyLifeguard",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/Vildravn/LobbyLifeguard/",
+    "description": "A lifeguard for your lobby that bans icky people on sight.",
+    "dependencies": [
+        "NotNet-GDWeave-2.0.14",
+        "PuppyGirl-TackleBox-0.4.3"
+    ]
+}
