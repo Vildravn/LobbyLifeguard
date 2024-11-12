@@ -31,6 +31,9 @@ func _on_config_update(mod_id, new_config):
 
 
 func _on_player_connect(steam_id):
+	if not Network.GAME_MASTER:
+		return
+	
 	var str_steam_id = String(steam_id)
 	if str_steam_id in banlist:
 		print("[%s] Player %s found on the banlist. Banning them." % [MOD_ID, steam_id])
