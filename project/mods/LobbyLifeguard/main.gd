@@ -34,9 +34,8 @@ func _on_player_connect(steam_id):
 	var str_steam_id = String(steam_id)
 	if str_steam_id in banlist:
 		print("[%s] Player %s found on the banlist. Banning them." % [MOD_ID, steam_id])
-		var banned_username = Network._get_username_from_id(steam_id)
 		Network._ban_player(steam_id)
-		Network._update_chat("[color=#ac0029][%s]Player banned, they will be removed from the online list soon.[/color]" % [MOD_ID, banned_username])
+		Network._update_chat("[color=#ac0029][%s]Player banned, they will be removed from the online list soon.[/color]" % [MOD_ID])
 
 
 func _populate_banlist():
