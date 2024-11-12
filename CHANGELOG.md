@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2024-11-13
+
+### Added
+
+- Added support for the Block feature introduced in WEBFISHING 1.10
+  - The lobby owner boots/bans the banlisted player as soon as they connect
+  - Everyone else instead instantly blocks the player
+
 ## [1.0.2] - 2024-11-12
 
 ### Fixed

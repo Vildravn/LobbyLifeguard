@@ -2,7 +2,7 @@
 
 A lifeguard for your lobby that bans icky people on sight.
 
-This mod is intended to stop unwelcome people that grief WEBFISHING lobbies by guessing lobby codes. It will automatically ban anyone configured in the banlist upon joining the lobby.
+This mod is intended to stop unwelcome people that grief WEBFISHING lobbies by guessing lobby codes. If you are the lobby owner (game master), players that are on your banlist that try to connect to your lobby will immediately get booted and banned. If you are not the lobby owner, you instead instantly block the player.
 
 ## Installation
 
@@ -22,7 +22,7 @@ The banlist will update immediately upon saving changes, no game restart needed.
 
 The following features are not yet implemented but I am planning to add them:
 
-* Automatically add a person to the banlist when banned through the player list in-game
+* Automatically add a person to the banlist when booted or blocked through the player list in-game
 
 ## Credits
 

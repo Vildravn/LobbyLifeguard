@@ -31,14 +31,16 @@ func _on_config_update(mod_id, new_config):
 
 
 func _on_player_connect(steam_id):
-	if not Network.GAME_MASTER:
-		return
-	
-	var str_steam_id = String(steam_id)
-	if str_steam_id in banlist:
-		print("[%s] Player %s found on the banlist. Banning them." % [MOD_ID, steam_id])
-		Network._ban_player(steam_id)
-		Network._update_chat("[color=#ac0029][%s]Player banned, they will be removed from the online list soon.[/color]" % [MOD_ID])
+		var str_steam_id = String(steam_id)
+		if str_steam_id in banlist:
+			if Network.GAME_MASTER:
+				print("[%s] Player %s found on the banlist and you are game master. Banning them." % [MOD_ID, steam_id])
+				Network._ban_player(steam_id)
+				Network._update_chat("[color=#ac0029][%s] Detected a connecting player on your ban list. They've been banned from this lobby.[/color]" % [MOD_ID])
+			else:
+				print("[%s] Player %s found on the banlist and you're not game master. Blocking them." % [MOD_ID, steam_id])
+				PlayerData._hide_player(steam_id)
+				Network._update_chat("[color=#ac0029][%s] Detected a connecting player on your ban list. They've been blocked in this lobby.[/color]" % [MOD_ID])
 
 
 func _populate_banlist():

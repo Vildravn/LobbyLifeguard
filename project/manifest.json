@@ -7,7 +7,7 @@
     "Metadata": {
       "Name": "LobbyLifeguard",
       "Author": "Vildravn",
-      "Version": "1.0.2",
-      "Description": "A lifeguard for your lobby that bans icky people on sight."
+      "Version": "1.1.0",
+      "Description": "A lifeguard for your lobby that bans and blocks icky people on sight."
     }
   }
