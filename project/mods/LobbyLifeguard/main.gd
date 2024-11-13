@@ -5,6 +5,7 @@ const MOD_ID = "LobbyLifeguard"
 const DEFAULT_CONFIG = {"banlist": ""}
 var config: Dictionary
 var banlist: Array
+var found_chat_node = false
 
 onready var TackleBox := $"/root/TackleBox"
 
@@ -48,3 +49,22 @@ func _populate_banlist():
 		banlist = []
 		for entry in config["banlist"].split(","):
 			banlist.append(entry.strip_edges())
+
+
+func _process(delta):
+	var chatnode = get_node_or_null("/root/playerhud/main/in_game/gamechat/RichTextLabel")
+	if (chatnode and not found_chat_node):
+		chatnode.mouse_filter = 0
+		chatnode.connect("meta_clicked", self, "_link_clicked")
+		found_chat_node = true
+		Network._update_chat("[url=data]Click me![/url]")
+		for child in get_node("/root/playerhud/main/menu/tabs/players/ScrollContainer/GridContainer").get_children():
+			for grandchild in child.get_children():
+				print(grandchild.get_path())
+				print(grandchild.held_data)
+
+
+func _link_clicked(meta):
+	print("Clicked")
+	Network._update_chat("You clicked me!")
+
